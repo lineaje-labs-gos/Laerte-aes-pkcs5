@@ -5,6 +5,7 @@ from setuptools.command.develop import develop
 
 from aes_pkcs5 import __version__
 
+
 class CustomDevelopCommand(develop):
     """Instal development dependencies"""
 
@@ -12,20 +13,15 @@ class CustomDevelopCommand(develop):
         system("pip install -r requirements-dev.txt")
         system("pre-commit install")
 
-requires = ["cryptography >= 37.0.2"]
+
+requires = ["cryptography>=46.0.7"]
 
 extras = {}
 
 with open("README.rst") as f:
     long_description = f.read()
 
-setup(project_urls={
-    'Homepage': 'https://github.com/lineaje-labs-gos/Laerte-aes-pkcs5',
-    'Repository': 'https://github.com/lineaje-labs-gos/Laerte-aes-pkcs5',
-    'Tracker': 'https://github.com/lineaje-labs-gos/Laerte-aes-pkcs5/issues',
-  }, 
-  maintainer_email="221268890+Lineaje-DepFixer@users.noreply.github.com", 
-  maintainer="Lineaje DepFixer", 
+setup(
     name="aes_pkcs5",
     version=__version__,
     description="Implementation of AES with CBC/ECB mode and padding scheme PKCS5",
@@ -33,7 +29,7 @@ setup(project_urls={
     author="Laerte Pereira",
     author_email="hi@laerte.dev",
     license="BSD",
-    url="https://github.com/lineaje-labs-gos/Laerte-aes-pkcs5",
+    url="https://github.com/Laerte/aes_pkcs5",
     packages=find_packages(include=["aes_pkcs5*"], exclude=["tests.*"]),
     classifiers=[
         "Intended Audience :: Developers",
